@@ -8,7 +8,7 @@ tf = tensorflow.compat.v1
 tf.disable_eager_execution()
 kr = tf.keras
 
-folders = ["circle", "triangle", "square", "inv_triangle"]
+folders = ["circle", "triangle", "square"]
 outfolder_end = "_shaping"
 
 dataset_x = []
@@ -37,6 +37,7 @@ dataset_x = dataset_x / 255
 dataset_y = kr.utils.to_categorical(dataset_y, len(folders))
 
 x_train, x_test, y_train, y_test = train_test_split(dataset_x, dataset_y, random_state = 104)
+
 
 model = kr.models.Sequential()
 
